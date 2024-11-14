@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biwocd8h5pkb6"
-valid=false
+uid="uid://0jyu0famppwi"
+path="res://.godot/imported/element_red_diamond2.png-3470ed3e3cc2c5dbc0d8207389f2d890.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.svg"
+source_file="res://assets/element_red_diamond2.png"
+dest_files=["res://.godot/imported/element_red_diamond2.png-3470ed3e3cc2c5dbc0d8207389f2d890.ctex"]
 
 [params]
 
@@ -28,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
