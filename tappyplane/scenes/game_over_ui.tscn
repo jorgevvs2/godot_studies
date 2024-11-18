@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://gfav7tp4wfe0"]
+
+[ext_resource type="FontFile" uid="uid://b86noudaid86t" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_4fj36"]
+[ext_resource type="Script" path="res://scripts/game_over_ui.gd" id="1_qagge"]
+[ext_resource type="LabelSettings" uid="uid://gmd3qeome4p" path="res://assets/fonts/lg_blue_72.tres" id="2_3v03r"]
+[ext_resource type="AudioStream" uid="uid://buy31mj4640q8" path="res://assets/audio/game_over.wav" id="3_mxv57"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0dur"]
+font = ExtResource("1_4fj36")
+font_size = 64
+font_color = Color(0.8, 0.188235, 0.313726, 1)
+outline_size = 6
+outline_color = Color(0.511504, 0.140698, 0.627273, 1)
+
+[node name="GameOverUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qagge")
+
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_a0dur")
+
+[node name="SpaceLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -29.5
+offset_right = 163.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRESS SPACE"
+label_settings = ExtResource("2_3v03r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mxv57")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

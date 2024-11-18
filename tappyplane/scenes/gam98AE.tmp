@@ -1,24 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxk3ilq0eaudm"]
+[gd_scene load_steps=5 format=3 uid="uid://bxk3ilq0eaudm"]
 
 [ext_resource type="Texture2D" uid="uid://chwefipb1n06d" path="res://assets/background/rocks_2.png" id="1_k6ba2"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ki6al"]
-[ext_resource type="PackedScene" uid="uid://bhnr3l423dk5l" path="res://scenes/scrolling_bg.tscn" id="2_3yrm6"]
 [ext_resource type="PackedScene" uid="uid://bsx34b4h2uet2" path="res://scenes/plane.tscn" id="2_tyocv"]
 [ext_resource type="PackedScene" uid="uid://bpnobqtvooaoh" path="res://scenes/barrier.tscn" id="3_umhv7"]
-[ext_resource type="PackedScene" uid="uid://gfav7tp4wfe0" path="res://scenes/game_over_ui.tscn" id="5_rpdeo"]
-[ext_resource type="PackedScene" uid="uid://c55hpc5n6206n" path="res://scenes/hud.tscn" id="6_sdbd0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ki6al")
 
-[node name="ScrollingBg" parent="." instance=ExtResource("2_3yrm6")]
-
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(937, 325)
 texture = ExtResource("1_k6ba2")
 
-[node name="Plane" parent="." groups=["Plane"] instance=ExtResource("2_tyocv")]
+[node name="Plane" parent="." instance=ExtResource("2_tyocv")]
 position = Vector2(130, 229)
 
 [node name="Ceiling" parent="." instance=ExtResource("3_umhv7")]
@@ -28,7 +22,7 @@ position = Vector2(-1, -37)
 position = Vector2(-11, 878)
 
 [node name="SpawnU" type="Marker2D" parent="."]
-position = Vector2(530, 340)
+position = Vector2(530, 300)
 
 [node name="SpawnL" type="Marker2D" parent="."]
 position = Vector2(530, 540)
@@ -38,11 +32,5 @@ wait_time = 1.2
 autostart = true
 
 [node name="PipesHolder" type="Node" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="GameOverUi" parent="CanvasLayer" instance=ExtResource("5_rpdeo")]
-
-[node name="Hud" parent="CanvasLayer" instance=ExtResource("6_sdbd0")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
