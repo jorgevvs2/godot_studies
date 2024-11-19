@@ -1,0 +1,67 @@
+[gd_scene load_steps=16 format=3 uid="uid://dhj8h1qyjxekm"]
+
+[ext_resource type="PackedScene" uid="uid://oidgaw0mxapx" path="res://Assets/Models/Dungeon/gltf/floor_tile_small.gltf.glb" id="1_dqrlh"]
+[ext_resource type="PackedScene" uid="uid://cdssni2x3tw1w" path="res://Assets/Models/Dungeon/gltf/wall.gltf.glb" id="2_wbu3q"]
+[ext_resource type="PackedScene" uid="uid://e03bgcl4o1of" path="res://Assets/Models/Dungeon/gltf/wall_open_scaffold.gltf.glb" id="3_6okh2"]
+[ext_resource type="PackedScene" uid="uid://curehirtvp5m1" path="res://Assets/Models/Dungeon/gltf/wall_Tsplit.gltf.glb" id="4_xdwph"]
+[ext_resource type="PackedScene" uid="uid://ba7pv3rl2r4oj" path="res://Assets/Models/Dungeon/gltf/wall_corner.gltf.glb" id="5_xd17m"]
+[ext_resource type="PackedScene" uid="uid://b0jmisnwqo1da" path="res://Assets/Models/Dungeon/gltf/stairs_wood_decorated.gltf.glb" id="6_ywjeg"]
+[ext_resource type="PackedScene" uid="uid://duopxspmonh11" path="res://Assets/Models/Dungeon/gltf/wall_doorway_scaffold.glb" id="7_bqpo7"]
+[ext_resource type="PackedScene" uid="uid://cfiplmbx53uf0" path="res://Assets/Models/Dungeon/gltf/wall_half_endcap.gltf.glb" id="8_jv0tg"]
+[ext_resource type="PackedScene" uid="uid://b8ggvibgdycsd" path="res://Assets/Models/Dungeon/gltf/wall_pillar.gltf.glb" id="9_bo3vh"]
+[ext_resource type="PackedScene" uid="uid://bvwqip778ptgk" path="res://Assets/Models/Dungeon/gltf/wall_sloped.gltf.glb" id="10_f1m5i"]
+[ext_resource type="PackedScene" uid="uid://desm478ke0dxe" path="res://Assets/Models/Dungeon/gltf/wall_Tsplit_sloped.gltf.glb" id="11_7fye3"]
+[ext_resource type="PackedScene" uid="uid://cdk4nbm0ffekh" path="res://Assets/Models/Dungeon/gltf/wall_window_open_scaffold.gltf.glb" id="12_qrt44"]
+[ext_resource type="PackedScene" uid="uid://cw2di8oy8dg2u" path="res://Assets/Models/Dungeon/gltf/wall_endcap.gltf.glb" id="13_tsbyk"]
+[ext_resource type="PackedScene" uid="uid://1f0cqbrcrgfg" path="res://Assets/Models/Dungeon/gltf/wall_gated.gltf.glb" id="14_i6sjl"]
+[ext_resource type="PackedScene" uid="uid://c72srv2dbs7ts" path="res://Assets/Models/Dungeon/gltf/wall_crossing.gltf.glb" id="15_mluly"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="floor_tile_small_gltf" parent="." instance=ExtResource("1_dqrlh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29384, -2.83976, 2.66216)
+
+[node name="wall_gltf" parent="." instance=ExtResource("2_wbu3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.908571, -0.0281587, -1.51228)
+
+[node name="wall_open_scaffold_gltf" parent="." instance=ExtResource("3_6okh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7131, -1.05784, 0.846766)
+
+[node name="wall_Tsplit_gltf" parent="." instance=ExtResource("4_xdwph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83114, -0.0354214, -1.50202)
+
+[node name="wall_corner_gltf" parent="." instance=ExtResource("5_xd17m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55751, -1.17896, 1.59772)
+
+[node name="stairs_wood_decorated_gltf" parent="." instance=ExtResource("6_ywjeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1346, 2.73598, -7.60528)
+
+[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("7_bqpo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.389867, 0, 7.48919)
+
+[node name="wall_half_endcap_gltf" parent="." instance=ExtResource("8_jv0tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.88863, -2.87042, 4.93696)
+
+[node name="wall_pillar_gltf" parent="." instance=ExtResource("9_bo3vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00173616, 0, 11.6248)
+
+[node name="wall_sloped_gltf" parent="." instance=ExtResource("10_f1m5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.61644, 0, 3.14119)
+
+[node name="wall_Tsplit_sloped_gltf" parent="." instance=ExtResource("11_7fye3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9674, 0, -4.58818)
+
+[node name="wall_window_open_scaffold_gltf" parent="." instance=ExtResource("12_qrt44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14536, 0, 9.05899)
+
+[node name="wall_half_endcap_gltf2" parent="." instance=ExtResource("8_jv0tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55865, 0, 10.2719)
+
+[node name="wall_endcap_gltf" parent="." instance=ExtResource("13_tsbyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4672, 0, 4.96502)
+
+[node name="wall_gated_gltf" parent="." instance=ExtResource("14_i6sjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.59212, 0, -0.538768)
+
+[node name="wall_crossing_gltf" parent="." instance=ExtResource("15_mluly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1033, 0, -0.0193548)
