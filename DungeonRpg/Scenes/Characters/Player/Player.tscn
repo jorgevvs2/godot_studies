@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dsklecymsggkc"]
+[gd_scene load_steps=47 format=3 uid="uid://dsklecymsggkc"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.cs" id="1_acx3j"]
 [ext_resource type="Texture2D" uid="uid://dkb711w5ycnee" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="2_xcx70"]
@@ -41,6 +41,22 @@
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/MoveState.cs" id="38_2bkss"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/DashState.cs" id="39_6cbt6"]
 
+[sub_resource type="Animation" id="Animation_ono3j"]
+resource_name = "Dashing"
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("31_8iy5g"), ExtResource("32_d233n"), ExtResource("33_jwljw"), ExtResource("34_2oqys"), ExtResource("35_fafmp"), ExtResource("36_uodru")]
+}
+
 [sub_resource type="Animation" id="Animation_1tvvp"]
 resource_name = "idle"
 loop_mode = 1
@@ -56,37 +72,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_xcx70"), ExtResource("3_yscne"), ExtResource("4_nl34q"), ExtResource("5_iiciw"), ExtResource("6_4w413"), ExtResource("7_t1wo0"), ExtResource("8_pxsbg"), ExtResource("9_yekug"), ExtResource("10_mr44s"), ExtResource("11_ptosp"), ExtResource("12_8ffq0"), ExtResource("13_we5p4"), ExtResource("14_c2vx7"), ExtResource("15_6y748"), ExtResource("16_mjsn6"), ExtResource("17_phord"), ExtResource("18_3r2c5"), ExtResource("19_tpo70")]
-}
-
-[sub_resource type="Animation" id="Animation_mpdyi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_xcx70")]
-}
-
-[sub_resource type="Animation" id="Animation_ono3j"]
-resource_name = "Dashing"
-step = 0.166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("31_8iy5g"), ExtResource("32_d233n"), ExtResource("33_jwljw"), ExtResource("34_2oqys"), ExtResource("35_fafmp"), ExtResource("36_uodru")]
 }
 
 [sub_resource type="Animation" id="Animation_yf6pa"]
@@ -106,6 +91,21 @@ tracks/0/keys = {
 "values": [ExtResource("20_74y5j"), ExtResource("20_74y5j"), ExtResource("21_mn3q0"), ExtResource("22_dorb2"), ExtResource("23_7wpc3"), ExtResource("24_6nll7"), ExtResource("25_4t7mn"), ExtResource("26_q503e"), ExtResource("27_s84yg"), ExtResource("28_wdf6p"), ExtResource("29_jqttv"), ExtResource("30_mgf4f"), ExtResource("20_74y5j")]
 }
 
+[sub_resource type="Animation" id="Animation_mpdyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xcx70")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngorb"]
 _data = {
 "Dash": SubResource("Animation_ono3j"),
@@ -114,15 +114,23 @@ _data = {
 "RESET": SubResource("Animation_mpdyi")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o34mj"]
+radius = 0.419684
+height = 1.62159
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayer", "Sprite", "StateMachine")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355167, 0.705019, -0.165569)
+wall_min_slide_angle = 0.970403
+floor_max_angle = 1.55334
+floor_snap_length = 0.2
 script = ExtResource("1_acx3j")
 AnimPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.594719, 3.61535, 0.25988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.380715, -0.114486, 0.25988)
+pixel_size = 0.0025
 texture_filter = 0
 texture = ExtResource("2_xcx70")
 
@@ -151,3 +159,7 @@ speed = 20.0
 [node name="Timer" type="Timer" parent="StateMachine/DashState"]
 wait_time = 0.4
 one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409164, 0, 0.236235)
+shape = SubResource("CapsuleShape3D_o34mj")

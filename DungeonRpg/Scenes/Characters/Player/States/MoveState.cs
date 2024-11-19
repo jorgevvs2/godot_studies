@@ -14,8 +14,20 @@ public partial class MoveState : PlayerState
         character.Velocity = new(character.direction.X, 0, character.direction.Y);
         character.Velocity *= speed;
 
+        CheckFloor();
+
         character.MoveAndSlide();
         character.Flip();
+    }
+
+    protected void CheckFloor()
+    {
+        if (!character.IsOnFloor())
+        {
+            Vector3 velocity = character.Velocity;
+            velocity.Y -= 9.8f;
+            character.Velocity = velocity;
+        }
     }
 
     protected override void EnterState()
