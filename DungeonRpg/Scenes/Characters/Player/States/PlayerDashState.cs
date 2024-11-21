@@ -1,7 +1,7 @@
 using DungeonRPG.General.Constants;
 using Godot;
 
-public partial class DashState : PlayerState
+public partial class PlayerDashState : PlayerState
 {
     [Export] private Timer dashTimer = new();
     [Export(PropertyHint.Range,"0,20,0.1")] private float speed = 10;
@@ -14,7 +14,7 @@ public partial class DashState : PlayerState
     private void handleDashTimeout()
     {
         character.Velocity = Vector3.Zero;
-        character.StateMachine.SwitchState<IdleState>();
+        character.StateMachine.SwitchState<PlayerIdleState>();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -25,7 +25,7 @@ public partial class DashState : PlayerState
 
     protected override void EnterState()
     {
-        character.AnimPlayer.Play(GameConstants.ANIM_DASH);
+        character.AnimPlayer.Play(AnimationConstants.ANIM_DASH);
         character.Velocity = new(character.direction.X, 0, character.direction.Y);
         if (character.Velocity == Vector3.Zero)
         {

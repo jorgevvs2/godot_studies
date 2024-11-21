@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DungeonRPG": {
+      "commandName": "Project",
+      "commandLineArgs": "-e --path"
+    }
+  }
+}

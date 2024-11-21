@@ -4,7 +4,7 @@ using System;
 
 public partial class StateMachine : Node
 {
-	[Export] private Node currentState;
+	[Export] public Node currentState;
     [Export] private Node[] states;
 
 	// Called when the node enters the scene tree for the first time.

@@ -35,6 +35,8 @@ _subresources={
 "nodes": {
 "PATH:wall": {
 "generate/physics": true,
+"mesh_instance/visibility_range_begin": 4096.0,
+"mesh_instance/visibility_range_end": 4096.0,
 "physics/mask": 0,
 "physics/shape_type": 1
 }
