@@ -1,8 +1,9 @@
-[gd_scene load_steps=100 format=3 uid="uid://crtx5b3gldltn"]
+[gd_scene load_steps=122 format=3 uid="uid://crtx5b3gldltn"]
 
 [ext_resource type="Texture2D" uid="uid://cnnjebonrlyox" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_bxsib"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemy/Enemy.cs" id="1_oo6gp"]
 [ext_resource type="Texture2D" uid="uid://bhwdv3m3yuq2i" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="2_kkclr"]
+[ext_resource type="Script" path="res://Scenes/Characters/Resources/StatResource.cs" id="2_pwk8y"]
 [ext_resource type="Texture2D" uid="uid://dsieh5x5d0ged" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_002.png" id="3_il8f1"]
 [ext_resource type="Texture2D" uid="uid://myt14njis4yq" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_003.png" id="4_3h7yo"]
 [ext_resource type="Texture2D" uid="uid://b8oh7pdh8d7i5" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_004.png" id="5_sipxr"]
@@ -89,9 +90,34 @@
 [ext_resource type="Texture2D" uid="uid://5whwmobffaab" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_010.png" id="86_7b3ip"]
 [ext_resource type="Texture2D" uid="uid://ccdhy4e7xslan" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="87_gtvpr"]
 [ext_resource type="PackedScene" uid="uid://cbm0o2acdnl5l" path="res://Scenes/Characters/state_machine.tscn" id="88_0c3lv"]
+[ext_resource type="Texture2D" uid="uid://cjii6rxrwwvre" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_000.png" id="89_rdke2"]
+[ext_resource type="Texture2D" uid="uid://d3te7vosbppda" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_001.png" id="90_2kxog"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyIdleState.cs" id="90_frjwk"]
+[ext_resource type="Texture2D" uid="uid://5lgiv22mfh2d" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_002.png" id="91_i4jl4"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyReturnState.cs" id="91_iay0u"]
+[ext_resource type="Texture2D" uid="uid://u6sk3ndx2q8b" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_003.png" id="92_7eqwt"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyPatrolState.cs" id="92_i7e25"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyChaseState.cs" id="93_857f7"]
+[ext_resource type="Texture2D" uid="uid://exb8y021be8f" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_004.png" id="93_l1ljo"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyAttackState.cs" id="94_ebaia"]
+[ext_resource type="Texture2D" uid="uid://d3td25pg7pjky" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_005.png" id="94_ta8iy"]
+[ext_resource type="Texture2D" uid="uid://oggrg8t7jc71" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_006.png" id="95_ri6ku"]
+[ext_resource type="Texture2D" uid="uid://bys3qt5ytixuk" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_007.png" id="96_xaq6o"]
+[ext_resource type="Texture2D" uid="uid://bc6rj3380q0q2" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_008.png" id="97_a3kmc"]
+[ext_resource type="Texture2D" uid="uid://gmgjlhy56eld" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_009.png" id="98_2sm0p"]
+[ext_resource type="Texture2D" uid="uid://bjrgugqwi1l0a" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_010.png" id="99_s180i"]
+[ext_resource type="Texture2D" uid="uid://bygl46178d7dc" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_011.png" id="100_10hqk"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemy/States/EnemyDeathState.cs" id="108_38kuh"]
+
+[sub_resource type="Resource" id="Resource_k8yty"]
+script = ExtResource("2_pwk8y")
+StatType = 0
+StatValue = 20.0
+
+[sub_resource type="Resource" id="Resource_12pfc"]
+script = ExtResource("2_pwk8y")
+StatType = 1
+StatValue = 4.0
 
 [sub_resource type="Animation" id="Animation_wylpl"]
 resource_name = "Death"
@@ -199,8 +225,39 @@ tracks/0/keys = {
 "values": [ExtResource("76_nbfui"), ExtResource("77_4ntb4"), ExtResource("78_80xvt"), ExtResource("79_l40bg"), ExtResource("80_hh6b2"), ExtResource("81_nkkep"), ExtResource("82_yyirc"), ExtResource("83_xq7uc"), ExtResource("84_nhs8r"), ExtResource("85_1atcy"), ExtResource("86_7b3ip"), ExtResource("87_gtvpr"), ExtResource("76_nbfui")]
 }
 
+[sub_resource type="Animation" id="Animation_gyrpe"]
+resource_name = "Attack"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("89_rdke2"), ExtResource("90_2kxog"), ExtResource("91_i4jl4"), ExtResource("92_7eqwt"), ExtResource("93_l1ljo"), ExtResource("94_ta8iy"), ExtResource("95_ri6ku"), ExtResource("96_xaq6o"), ExtResource("97_a3kmc"), ExtResource("98_2sm0p"), ExtResource("99_s180i"), ExtResource("100_10hqk"), ExtResource("89_rdke2")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine/AttackState")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PerformHit"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bgdpi"]
 _data = {
+"Attack": SubResource("Animation_gyrpe"),
 "Death": SubResource("Animation_wylpl"),
 "Idle": SubResource("Animation_24fjc"),
 "Move": SubResource("Animation_6q0eo"),
@@ -209,18 +266,34 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qki0e"]
-radius = 0.36241
-height = 1.54678
+radius = 0.46951
+height = 1.45888
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("Label", "AnimPlayer", "Sprite", "StateMachine", "Agent")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_51myy"]
+radius = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tteox"]
+radius = 1.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5275v"]
+size = Vector3(0.458527, 0.550232, 1.3507)
+
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayer", "Sprite", "StateMachine", "HurtBox", "HitBox", "HitBoxShape", "Agent", "ChaseArea", "AttackArea")]
+collision_layer = 4
+collision_mask = 3
 floor_max_angle = 1.55334
 floor_snap_length = 0.2
 script = ExtResource("1_oo6gp")
-Label = NodePath("Label3D")
+stats = Array[Object]([SubResource("Resource_k8yty"), SubResource("Resource_12pfc")])
 AnimPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")
+HurtBox = NodePath("Hurtbox")
+HitBox = NodePath("HitBox")
+HitBoxShape = NodePath("HitBox/HitBoxShape")
 Agent = NodePath("NavigationAgent3D")
+ChaseArea = NodePath("ChaseArea")
+AttackArea = NodePath("AttackArea")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
@@ -237,7 +310,7 @@ shape = SubResource("CapsuleShape3D_qki0e")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("88_0c3lv")]
 currentState = NodePath("IdleState")
-states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState")]
+states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState"), NodePath("ChaseState"), NodePath("AttackState"), NodePath("DeathState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("90_frjwk")
@@ -253,9 +326,47 @@ idleTimer = NodePath("Timer")
 wait_time = 4.0
 one_shot = true
 
+[node name="ChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("updateChaseTimer")]
+script = ExtResource("93_857f7")
+updateChaseTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
+wait_time = 0.5
+autostart = true
+
+[node name="AttackState" type="Node" parent="StateMachine"]
+script = ExtResource("94_ebaia")
+
+[node name="DeathState" type="Node" parent="StateMachine"]
+script = ExtResource("108_38kuh")
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773478, 0)
-text = "Idle"
+[node name="ChaseArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126184, 0.0677075, -0.09799)
+shape = SubResource("SphereShape3D_51myy")
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="AttackAreaShape" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("SphereShape3D_tteox")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape3D_qki0e")
+
+[node name="HitBox" type="Area3D" parent="."]
+
+[node name="HitBoxShape" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0153155)
+shape = SubResource("BoxShape3D_5275v")

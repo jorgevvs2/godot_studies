@@ -4,7 +4,6 @@ using Godot;
 public partial class PlayerDashState : PlayerState
 {
     [Export] private Timer dashTimer = new();
-    [Export(PropertyHint.Range,"0,20,0.1")] private float speed = 10;
     public override void _Ready()
     {
         base._Ready();

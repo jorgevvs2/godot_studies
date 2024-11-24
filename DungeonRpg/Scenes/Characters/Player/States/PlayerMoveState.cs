@@ -25,6 +25,7 @@ public partial class PlayerMoveState : PlayerState
     }
     public override void _Input(InputEvent @event)
     {
+        CheckForAttackInput();
         if (Input.IsActionPressed(MovementConstants.DASH))
         {
             character.StateMachine.SwitchState<PlayerDashState>();

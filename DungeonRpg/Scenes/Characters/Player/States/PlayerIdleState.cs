@@ -15,12 +15,14 @@ public partial class PlayerIdleState : PlayerState
     }
     public override void _Input(InputEvent @event)
     {
+        CheckForAttackInput();
+
         if (Input.IsActionPressed(MovementConstants.DASH))
         {
             character.StateMachine.SwitchState<PlayerDashState>();
         }
-           
     }
+
     protected override void EnterState() 
     {
         character.AnimPlayer.Play(AnimationConstants.ANIM_IDLE);

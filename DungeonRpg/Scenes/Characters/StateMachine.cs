@@ -1,6 +1,7 @@
 using DungeonRPG.General.Constants;
 using Godot;
 using System;
+using System.Linq;
 
 public partial class StateMachine : Node
 {
@@ -22,13 +23,8 @@ public partial class StateMachine : Node
 	{
 		Node newState = null;
 
-		foreach (Node state in states)
-		{
-			if (state is T)
-			{
-				newState = state;
-            }
-		}
+		newState = states.First(s => s is T);
+
 		if (newState == null)
 		{
 			GD.PrintErr("State not found");

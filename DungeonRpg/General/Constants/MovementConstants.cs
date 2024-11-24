@@ -14,5 +14,7 @@ namespace DungeonRPG.General.Constants
         public const string MOVE_BACKWARD = "MoveBackward";
 
         public const string DASH = "Dash";
+
+        public const string ATTACK = "Attack";
     }
 }

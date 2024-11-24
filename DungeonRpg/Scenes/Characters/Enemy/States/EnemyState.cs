@@ -33,5 +33,15 @@ namespace DungeonRPG.Scenes.Characters.Enemy
             character.Flip();
         }
 
+        protected void HandleChaseBodyEntered(Node3D body)
+        {
+            character.StateMachine.SwitchState<EnemyChaseState>();
+        }
+
+        protected void HandleAttackBodyEntered(Node3D body)
+        {
+            character.StateMachine.SwitchState<EnemyAttackState>();
+        }
+
     }
 }

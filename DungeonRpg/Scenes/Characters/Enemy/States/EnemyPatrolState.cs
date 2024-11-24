@@ -22,6 +22,7 @@ public partial class EnemyPatrolState : EnemyState
 
         character.Agent.NavigationFinished += HandleNavigationFinished;
         idleTimer.Timeout += HandleTimeout;
+        character.ChaseArea.BodyEntered += HandleChaseBodyEntered;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -44,9 +45,17 @@ public partial class EnemyPatrolState : EnemyState
         idleTimer.Start();
     }
 
+    protected override void ExitState()
+    {
+
+        character.Agent.NavigationFinished -= HandleNavigationFinished;
+        idleTimer.Timeout -= HandleTimeout;
+        character.ChaseArea.BodyEntered -= HandleChaseBodyEntered;
+    }
+
     private void HandleTimeout()
     {
-        character.AnimPlayer.Play(AnimationConstants.ANIM_MOVE);
+        character.AnimPlayer.Play(AnimationConstants.ANIM_MOVE); 
 
         pointIndex = Mathf.Wrap(
            pointIndex + 1, 0, character.Path.Curve.PointCount

@@ -11,5 +11,7 @@ namespace DungeonRPG.General.Constants
         public const string ANIM_IDLE = "Idle";
         public const string ANIM_MOVE = "Move";
         public const string ANIM_DASH = "Dash";
+        public const string ANIM_ATTACK = "Attack";
+        public const string ANIM_DEATH = "Death";
     }
 }

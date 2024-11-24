@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqboohh0ixd5f"]
+[gd_scene load_steps=13 format=3 uid="uid://dqboohh0ixd5f"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Main/Main.cs" id="1_wm8vi"]
 [ext_resource type="PackedScene" uid="uid://dsklecymsggkc" path="res://Scenes/Characters/Player/Player.tscn" id="2_puy8d"]
 [ext_resource type="MeshLibrary" uid="uid://41qkoxetnjrk" path="res://Resources/tiles.tres" id="3_a3v8v"]
-[ext_resource type="Script" path="res://Scenes/Characters/Player/Camera/Camera.cs" id="3_hl1ls"]
 [ext_resource type="PackedScene" uid="uid://crtx5b3gldltn" path="res://Scenes/Characters/Enemy/enemy.tscn" id="5_55xb8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sfpnf"]
@@ -60,11 +59,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355167, 1.81448, -0.165569
 collision_layer = 2
 wall_min_slide_angle = 0.185005
 
-[node name="Camera3D" type="Camera3D" parent="Player" node_paths=PackedStringArray("RayCast", "WallGridMap")]
+[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.867765, 0.496974, 0, -0.496974, 0.867765, 0.5, 3, 6)
-script = ExtResource("3_hl1ls")
-RayCast = NodePath("RayCast3D")
-WallGridMap = NodePath("../../Environment/NavigationRegion3D/WallGridMap")
 
 [node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -0.30237, -0.95319, 0, 0.95319, -0.30237, -0.0470459, -1.58864, -0.852785)
@@ -126,7 +122,7 @@ transform = Transform3D(0.999992, 0, -0.00387462, 0, 1, 0, 0.00387462, 0, 0.9999
 curve = SubResource("Curve3D_efj4k")
 
 [node name="Enemy" parent="Enemies/Path3D" node_paths=PackedStringArray("Path") instance=ExtResource("5_55xb8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2022, 1.89234, 0.0976496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66998, 1.89234, 0.0103452)
 Path = NodePath("..")
 
 [node name="Path3D2" type="Path3D" parent="Enemies"]

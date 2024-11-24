@@ -30,6 +30,11 @@ namespace DungeonRPG.Scenes.Common
             }
         }
 
+        protected virtual void ExitState()
+        {
+
+        }
+
         public override void _Notification(int what)
         {
             base._Notification(what);
@@ -43,6 +48,7 @@ namespace DungeonRPG.Scenes.Common
             {
                 SetPhysicsProcess(false);
                 SetProcessInput(false);
+                ExitState();
             }
         }
         protected virtual void EnterState() { }
