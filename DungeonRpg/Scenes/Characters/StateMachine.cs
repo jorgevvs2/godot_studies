@@ -30,6 +30,10 @@ public partial class StateMachine : Node
 			GD.PrintErr("State not found");
 			return;
 		}
+		if(currentState is T)
+		{
+			return;
+		}
         currentState.Notification(NotificationConstants.EXIT_STATE);
         currentState = newState;
 		currentState.Notification(NotificationConstants.ENTER_STATE);

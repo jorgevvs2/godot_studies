@@ -1,5 +1,7 @@
-﻿using DungeonRPG.Scenes.Common;
+﻿using DungeonRPG.General.Enums;
+using DungeonRPG.Scenes.Common;
 using Godot;
+using System;
 using static Godot.WebSocketPeer;
 
 namespace DungeonRPG.Scenes.Characters.Enemy
@@ -11,6 +13,12 @@ namespace DungeonRPG.Scenes.Characters.Enemy
         public override void _Ready()
         {
             base._Ready();
+            character.GetStatResource(Stat.Health).OnZero += HandleZeroHealth;
+        }
+
+        private void HandleZeroHealth()
+        {
+            character.StateMachine.SwitchState<EnemyDeathState>();
         }
 
         protected Vector3 GetPointGlobalPosition(int index)

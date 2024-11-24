@@ -21,6 +21,7 @@ public partial class EnemyAttackState : EnemyState
 
     private void HandleAnimationFinished(StringName animName)
     {
+        character.ToggleHitBox(false);
         Attack();
     }
 

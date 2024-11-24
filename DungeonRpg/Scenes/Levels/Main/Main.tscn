@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqboohh0ixd5f"]
+[gd_scene load_steps=14 format=3 uid="uid://dqboohh0ixd5f"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Main/Main.cs" id="1_wm8vi"]
 [ext_resource type="PackedScene" uid="uid://dsklecymsggkc" path="res://Scenes/Characters/Player/Player.tscn" id="2_puy8d"]
 [ext_resource type="MeshLibrary" uid="uid://41qkoxetnjrk" path="res://Resources/tiles.tres" id="3_a3v8v"]
 [ext_resource type="PackedScene" uid="uid://crtx5b3gldltn" path="res://Scenes/Characters/Enemy/enemy.tscn" id="5_55xb8"]
+[ext_resource type="PackedScene" uid="uid://c8tas5tjy6ioy" path="res://Scenes/General/ui.tscn" id="5_tk4yf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sfpnf"]
 size = Vector3(2.03278, 8.83063, 6.70206)
@@ -56,7 +57,6 @@ script = ExtResource("1_wm8vi")
 
 [node name="Player" parent="." instance=ExtResource("2_puy8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355167, 1.81448, -0.165569)
-collision_layer = 2
 wall_min_slide_angle = 0.185005
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
@@ -156,3 +156,5 @@ curve = SubResource("Curve3D_3hyyp")
 [node name="Path3D9" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7106, 5.6429, -38.6275)
 curve = SubResource("Curve3D_3hyyp")
+
+[node name="UI" parent="." instance=ExtResource("5_tk4yf")]

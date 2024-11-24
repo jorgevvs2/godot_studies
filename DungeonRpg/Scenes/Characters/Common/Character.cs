@@ -36,13 +36,18 @@ namespace DungeonRPG.Scenes.Common
 
         private void HurtBoxAreaEntered(Area3D area)
         {
-            StatResource health = stats.First(s => s.StatType == Stat.Health);
+            StatResource health = GetStatResource(Stat.Health);
 
             Character character = area.GetOwner<Character>();
 
-            health.StatValue -= character.stats.First(s => s.StatType == Stat.Strength).StatValue;
+            health.StatValue -= character.GetStatResource(Stat.Strength).StatValue;
 
             GD.Print(health.StatValue);
+        }
+
+        public StatResource GetStatResource(Stat stat)
+        {
+            return stats.First(s => s.StatType == stat);
         }
 
         public void Flip()
