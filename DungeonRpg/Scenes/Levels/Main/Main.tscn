@@ -55,16 +55,14 @@ point_count = 5
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wm8vi")
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.867765, 0.496974, 0, -0.496974, 0.867765, 16.2109, 4.81448, 5.83443)
+
+[node name="UI" parent="." instance=ExtResource("5_tk4yf")]
+
 [node name="Player" parent="." instance=ExtResource("2_puy8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355167, 1.81448, -0.165569)
 wall_min_slide_angle = 0.185005
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.867765, 0.496974, 0, -0.496974, 0.867765, 0.5, 3, 6)
-
-[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -0.30237, -0.95319, 0, 0.95319, -0.30237, -0.0470459, -1.58864, -0.852785)
-target_position = Vector3(0, -6, 0)
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -156,5 +154,3 @@ curve = SubResource("Curve3D_3hyyp")
 [node name="Path3D9" type="Path3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7106, 5.6429, -38.6275)
 curve = SubResource("Curve3D_3hyyp")
-
-[node name="UI" parent="." instance=ExtResource("5_tk4yf")]
