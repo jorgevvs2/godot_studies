@@ -16,5 +16,7 @@ namespace DungeonRPG.General.Constants
         public const string DASH = "Dash";
 
         public const string ATTACK = "Attack";
+
+        public const string PAUSE = "Pause";
     }
 }

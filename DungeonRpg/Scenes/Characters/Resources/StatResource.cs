@@ -12,7 +12,8 @@ namespace DungeonRPG.Scenes.Characters.Resources
     [GlobalClass]
     public partial class StatResource : Resource
     {
-        public Action OnZero;
+        public event Action OnZero;
+        public event Action OnUpdate;
 
         [Export] public Stat StatType { get; private set; }
 
@@ -22,7 +23,10 @@ namespace DungeonRPG.Scenes.Characters.Resources
             get => _statValue;
             set {
                 _statValue = Mathf.Clamp(value, 0, float.MaxValue);
-                if(_statValue == 0)
+
+                OnUpdate?.Invoke();
+
+                if (_statValue == 0)
                 {
                     OnZero?.Invoke();
                 }

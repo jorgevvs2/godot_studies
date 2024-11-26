@@ -1,4 +1,5 @@
 using DungeonRPG.General.Constants;
+using DungeonRPG.General.Events;
 using DungeonRPG.Scenes.Characters.Enemy;
 using Godot;
 using System;
@@ -13,6 +14,6 @@ public partial class EnemyDeathState : EnemyState
 
     private void HandleAnimationFinished(StringName animName)
     {
-        character.QueueFree();
+        character.Path.QueueFree();
     }
 }

@@ -1,4 +1,5 @@
 using DungeonRPG.General.Constants;
+using DungeonRPG.General.Events;
 using Godot;
 using System;
 
@@ -12,6 +13,7 @@ public partial class PlayerDeathState : PlayerState
 
     private void HandleAnimationFinished(StringName animName)
     {
+        GameEvents.RaiseEndGame();
         character.QueueFree();
     }
 }
