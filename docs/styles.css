@@ -1,0 +1,105 @@
+:root {
+    --bg-color-light: #f0f0f0;
+    --bg-color-dark: #1a2b3c;
+    --text-color-light: black;
+    --text-color-dark: white;
+    --button-bg-light: #4CAF50;
+    --button-bg-dark: #2c3e50;
+    --button-hover-light: #45a049;
+    --button-hover-dark: #34495e;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.main-title {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.signature {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: color 0.3s;
+}
+
+body.dark-mode .main-title,
+body.dark-mode .signature {
+    color: white;
+}
+
+body:not(.dark-mode) .main-title,
+body:not(.dark-mode) .signature {
+    color: black;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.game-button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: var(--button-bg-light);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    gap: 10px;
+}
+
+body.dark-mode .game-button {
+    background-color: var(--button-bg-dark);
+}
+
+.game-button img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.game-button:hover {
+    background-color: var(--button-hover-light);
+}
+
+body.dark-mode .game-button:hover {
+    background-color: var(--button-hover-dark);
+}
